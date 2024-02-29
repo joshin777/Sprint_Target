@@ -1,0 +1,19 @@
+
+
+<div class="app-container">
+  <div class="column">
+    <app-story-form (addStory)="addStory($event)"></app-story-form>
+    <app-sprint-target-form
+      (setTargetSprintPointsEvent)="setTargetSprintPoints($event)"
+      (autoSelectStoriesEvent)="autoSelectStories()"
+      (clearStoriesEvent)="handleClearStories()"
+      [stories]="stories"
+      (clearSelectedStories)="clearSelectedStories"
+      (clearSelectedStoriesEvent)="handleClearSelectedStories()"
+    ></app-sprint-target-form>
+  </div>
+
+  <div class="column">
+    <app-story-list [stories]="stories" [autoSelectedStories]="autoSelectedStories"></app-story-list>
+  </div>
+</div>
